@@ -73,7 +73,7 @@
 
 Once the uploading process has finished it shows a success message on the terminal
 
-![Upload Filesystem Image Success](./docs/img/upload_filesystem1.png)
+![Upload Filesystem Image Success](./docs/img/upload_filesystem2.png)
 
 
 5. Connect to the Portal:
