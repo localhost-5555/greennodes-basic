@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greennodes Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Greennodes Dashboard 🌿</h1>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="switchTab('dashboard')">Dashboard</button>
+            <button class="nav-tab" onclick="switchTab('settings')">Settings</button>
+        </div>
+
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+            <h2 class="section-title">Sensor Values</h2>
+            <div class="values-container">
+                <div class="value-card">
+                    <div class="value-label">Soil Moisture</div>
+                    <div class="value-display">
+                        <span id="moisture">72</span><span class="value-unit">%</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Controls</h2>
+            <div class="controls-container">
+                <div class="control-buttons">
+                    <button class="btn-mode" id="modeBtn" onclick="toggleMode(this)">
+                        Auto: <span id="modeStatus">Off</span>
+                    </button>
+                </div>
+
+                <div class="grid-controls">
+                    <button class="btn-control" id="irrigationBtn" onclick="toggleIrrigation(this)">
+                        <span>Irrigation</span>
+                        <span class="control-status">OFF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div id="settings" class="tab-content">
+            <div class="settings-form">
+                <h2 class="section-title">Configuration</h2>
+                <div class="success-message" id="successMsg">Settings saved successfully!</div>
+
+                <div class="form-group">
+                    <label for="dryValue">Dry Value (ADC reading)</label>
+                    <input type="number" id="dryValue" min="0" max="1023" placeholder="1025">
+                    <div class="form-description">ADC value when soil is completely dry</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="wetValue">Wet Value (ADC reading)</label>
+                    <input type="number" id="wetValue" min="0" max="1023" placeholder="555">
+                    <div class="form-description">ADC value when soil is completely wet</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="threshold">Dry Threshold (%)</label>
+                    <input type="number" id="threshold" min="0" max="100" placeholder="40">
+                    <div class="form-description">Moisture percentage at which irrigation turns ON in auto mode</div>
+                </div>
+
+                <button class="btn-save" onclick="saveSettings()">Save Settings</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

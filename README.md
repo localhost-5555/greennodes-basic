@@ -67,7 +67,16 @@
 
 3. Upload the sketch to the development board
 
-4. Connect to the Portal:
+4. Upload the static files to LittleFS using Upload Filesystem Image option from platformio
+
+![Upload Filesystem Image](./docs/img/upload_filesystem1.png)
+
+Once the uploading process has finished it shows a success message on the terminal
+
+![Upload Filesystem Image Success](./docs/img/upload_filesystem1.png)
+
+
+5. Connect to the Portal:
 
 - Connect your phone/computer to WiFi: "Greennodes"
 - Password: "greennodes123"
